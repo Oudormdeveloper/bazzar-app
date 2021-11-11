@@ -33,5 +33,10 @@ class AppPages {
       page: () => MasterView(),
       binding: MasterBinding(),
     ),
+    GetPage(
+      name: _Paths.DETAIL,
+      page: () => DetailView(),
+      binding: DetailBinding(),
+    ),
   ];
 }

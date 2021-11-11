@@ -32,3 +32,7 @@ TextStyle kBody2Text() {
     color: Colors.black,
   );
 }
+
+TextStyle kCaptionText() {
+  return Get.textTheme.caption!;
+}
