@@ -64,70 +64,7 @@ class DetailView extends GetView<DetailController> {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          border: Border(
-            top: BorderSide(
-              width: 1,
-              color: cGrey,
-            ),
-          ),
-        ),
-        padding: EdgeInsets.all(kvDefaultPadding),
-        child: Row(
-          children: [
-            Expanded(
-              child: SizedBox(
-                height: 40,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Add To Cart',
-                    style: Get.textTheme.button!.copyWith(
-                      color: cPrimary,
-                    ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    primary: cWhite,
-                    shape: RoundedRectangleBorder(
-                      side: BorderSide(
-                        width: 1,
-                        color: cPrimary,
-                      ),
-                      borderRadius: BorderRadius.circular(
-                        kvBorderRadius,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            HorizontalSpacing(),
-            Expanded(
-              child: SizedBox(
-                height: 40,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Buy Now',
-                    style: Get.textTheme.button!.copyWith(
-                      color: cWhite,
-                    ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    primary: cPrimary,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                        kvBorderRadius,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+      bottomNavigationBar: ReViewBottomBar(),
     );
   }
 
@@ -150,6 +87,116 @@ class DetailView extends GetView<DetailController> {
         style: Get.textTheme.button!.copyWith(
           color: active ? cPrimary : Colors.grey,
         ),
+      ),
+    );
+  }
+}
+
+class ReViewBottomBar extends StatelessWidget {
+  const ReViewBottomBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        border: Border(
+          top: BorderSide(
+            width: 1,
+            color: cGrey,
+          ),
+        ),
+      ),
+      padding: EdgeInsets.all(kvDefaultPadding),
+      child: CupertinoButton.filled(
+        onPressed: () {},
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.edit,
+              size: 18,
+            ),
+            HorizontalSpacing(of: 5),
+            Text(
+              'Write Review',
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class AddToCardBottomBar extends StatelessWidget {
+  const AddToCardBottomBar({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        border: Border(
+          top: BorderSide(
+            width: 1,
+            color: cGrey,
+          ),
+        ),
+      ),
+      padding: EdgeInsets.all(kvDefaultPadding),
+      child: Row(
+        children: [
+          Expanded(
+            child: SizedBox(
+              height: 40,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  'Add To Cart',
+                  style: Get.textTheme.button!.copyWith(
+                    color: cPrimary,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: cWhite,
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(
+                      width: 1,
+                      color: cPrimary,
+                    ),
+                    borderRadius: BorderRadius.circular(
+                      kvBorderRadius,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          HorizontalSpacing(),
+          Expanded(
+            child: SizedBox(
+              height: 40,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  'Buy Now',
+                  style: Get.textTheme.button!.copyWith(
+                    color: cWhite,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: cPrimary,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                      kvBorderRadius,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

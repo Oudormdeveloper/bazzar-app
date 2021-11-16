@@ -14,19 +14,7 @@ class MyApp extends StatelessWidget {
       initialRoute: AppPages.INITIAL,
       debugShowCheckedModeBanner: false,
       getPages: AppPages.routes,
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          backgroundColor: cWhite,
-          elevation: 0,
-          iconTheme: IconThemeData(
-            color: cGrey,
-          ),
-        ),
-        scaffoldBackgroundColor: cWhite,
-        textTheme: GoogleFonts.poppinsTextTheme(
-          Theme.of(context).textTheme,
-        ),
-      ),
+      theme: Themes.lightTheme(),
     );
   }
 }
