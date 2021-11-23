@@ -22,6 +22,12 @@ TextStyle kButtonText() {
   );
 }
 
+TextStyle kSubTitle1Text() {
+  return Get.textTheme.subtitle1!.copyWith(
+    color: Colors.black,
+  );
+}
+
 TextStyle kBody1Text() {
   return Get.textTheme.bodyText1!
       .copyWith(color: Colors.black, fontWeight: FontWeight.bold);

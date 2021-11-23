@@ -1,3 +1,5 @@
+import 'package:bazzar/app/modules/account/bindings/account_binding.dart';
+import 'package:bazzar/app/modules/account/views/account_view.dart';
 import 'package:bazzar/core.dart';
 
 part 'app_routes.dart';
@@ -37,6 +39,11 @@ class AppPages {
       name: _Paths.DETAIL,
       page: () => DetailView(),
       binding: DetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.ACCOUNT,
+      page: () => AccountView(),
+      binding: AccountBinding(),
     ),
   ];
 }

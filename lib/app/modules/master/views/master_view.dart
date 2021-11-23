@@ -16,8 +16,8 @@ class MasterView extends GetView<MasterController> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.chat_bubble),
-            label: 'Messages',
+            icon: Icon(CupertinoIcons.person),
+            label: 'Account',
           ),
         ],
       ),
@@ -30,28 +30,10 @@ class MasterView extends GetView<MasterController> {
         } else {
           return CupertinoTabView(
             navigatorKey: thirdTabNavKey,
-            builder: (BuildContext context) => MySecondTab(),
+            builder: (BuildContext context) => AccountView(),
           );
         }
       },
-    );
-  }
-}
-
-class MyFirstTab extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.redAccent,
-    );
-  }
-}
-
-class MySecondTab extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.greenAccent,
     );
   }
 }
