@@ -16,6 +16,10 @@ class MasterView extends GetView<MasterController> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.cart),
+            label: 'Cart',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.person),
             label: 'Account',
           ),
@@ -26,6 +30,12 @@ class MasterView extends GetView<MasterController> {
           return CupertinoTabView(
             navigatorKey: firstTabNavKey,
             builder: (BuildContext context) => HomeView(),
+          );
+        }
+        if (index == 1) {
+          return CupertinoTabView(
+            navigatorKey: secondTabNavKey,
+            builder: (BuildContext context) => CartView(),
           );
         } else {
           return CupertinoTabView(

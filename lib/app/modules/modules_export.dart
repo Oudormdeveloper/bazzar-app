@@ -1,4 +1,5 @@
 export 'account/account_export.dart';
+export 'cart/cart_export.dart';
 export 'detail/detail_export.dart';
 export 'get-start/get_start_export.dart';
 export 'home/home_export.dart';
